@@ -1,0 +1,8 @@
+BASIC --- FRONT --- beach --- BACK --- house 
+
+BASIC --- FRONT --- beach2 --- BACK --- house2 
+
+BASIC --- FRONT --- hey there --- BACK --- poopapa 
+
+BASIC --- FRONT --- TEST --- BACK --- ANSWER 
+

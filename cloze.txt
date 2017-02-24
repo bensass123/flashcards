@@ -1,2 +1,9 @@
-CLOZE --- FRONT --- hey ... there --- BACK --- buhumpy 
+CLOZE --- FRONT --- hey over there --- BACK --- over
+
+CLOZE --- FRONT --- hey there man --- BACK --- there
+
+CLOZE --- FRONT --- Ben is my name. --- BACK --- Ben 
+
+CLOZE --- FRONT --- Roger Rabbit likes the song Shave and A Haircut --- BACK --- Roger Rabbit 
+CLOZE --- FRONT --- John is a TA. --- BACK --- jhhj 
 
