@@ -5,7 +5,7 @@ var basicArray = [];
 var clozeArray = [];
 
 
-class Basic {
+class BasicCard {
   constructor(front, back) {
     this.front = front;
     this.back = back;
@@ -19,7 +19,7 @@ class Basic {
   }
 }
 
-class Cloze {
+class ClozeCard {
   constructor(text, cloze) {
   	if (text.includes(cloze)){
   		console.log('creating');
@@ -97,12 +97,12 @@ var clozeCards = [];
 var basicCards = [];
 
 for (i in basicFrontArray){
-	var a = new Basic(basicFrontArray[i], basicBackArray[i]);
+	var a = new BasicCard(basicFrontArray[i], basicBackArray[i]);
 	basicCards.push(a);
 }
 
 for (i in clozeFrontArray){
-	var a = new Cloze(clozeFrontArray[i], clozeBackArray[i]);
+	var a = new ClozeCard(clozeFrontArray[i], clozeBackArray[i]);
 	clozeCards.push(a);
 }
 
@@ -120,53 +120,53 @@ for (i in clozeCards) {
 }
 
 
-inquirer.prompt([
-  {
-    type: "list",
-    message: "Cloze Flashcard or Basic Flashcard",
-    choices: ['Cloze','Basic'],
-    name: "type"
-  },
-  {
-    type: "input",
-    message: "Please enter full answer of flashcard.",
-    name: "one"
-  },
-  {
-  	type: "input",
-    message: "Please enter the answer. (If Cloze enter correct term to fill in the blank.)",
-    name: "two"
-  }	
+// inquirer.prompt([
+//   {
+//     type: "list",
+//     message: "Cloze Flashcard or Basic Flashcard",
+//     choices: ['Cloze','Basic'],
+//     name: "type"
+//   },
+//   {
+//     type: "input",
+//     message: "Please enter full answer of flashcard.",
+//     name: "one"
+//   },
+//   {
+//   	type: "input",
+//     message: "Please enter the answer. (If Cloze enter correct term to fill in the blank.)",
+//     name: "two"
+//   }	
 
-]).then(function(card, err) {
-	if (err) {
-		console.log(err);
-	}
-  // initializes the variable newguy to be a programmer object which will take
-  // in all of the user's answers to the questions above
+// ]).then(function(card, err) {
+// 	if (err) {
+// 		console.log(err);
+// 	}
+//   // initializes the variable newguy to be a programmer object which will take
+//   // in all of the user's answers to the questions above
 
-  var c = new Cloze(card.one, card.two);
-  if (card.type === 'Cloze' && c) {
-      response = `CLOZE --- FRONT --- ${card.one} --- BACK --- ${card.two} \r\n\r\n`;
-      fs.appendFile('cloze.txt', response, function(err) {
-          if (err) {
-              console.log(err);
-          }
-      });
+//   var c = new ClozeCard(card.one, card.two);
+//   if (card.type === 'Cloze' && c) {
+//       response = `CLOZE --- FRONT --- ${card.one} --- BACK --- ${card.two} \r\n\r\n`;
+//       fs.appendFile('cloze.txt', response, function(err) {
+//           if (err) {
+//               console.log(err);
+//           }
+//       });
 
-  	console.log('Cloze');
-  	console.log(`${card.one} --- ${card.two}`);
-  }
-  else {
-  	response = `BASIC --- FRONT --- ${card.one} --- BACK --- ${card.two} \r\n\r\n`;
-  	fs.appendFile('basic.txt', response, function (err) {
-  		if (err) {
-  			console.log(err);
-  		}
-	});
-  	console.log('Basic');
-  	console.log(`${card.one} --- ${card.two}`);
-  }
+//   	console.log('Cloze');
+//   	console.log(`${card.one} --- ${card.two}`);
+//   }
+//   else {
+//   	response = `BASIC --- FRONT --- ${card.one} --- BACK --- ${card.two} \r\n\r\n`;
+//   	fs.appendFile('basic.txt', response, function (err) {
+//   		if (err) {
+//   			console.log(err);
+//   		}
+// 	});
+//   	console.log('Basic');
+//   	console.log(`${card.one} --- ${card.two}`);
+//   }
 
-});
+// });
 
