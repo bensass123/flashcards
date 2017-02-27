@@ -10,12 +10,16 @@ class ClozeCard {
       this.text = text;
       this.cloze = cloze;
       jsonfile.writeFile('cloze.json', this, {flag: 'a'}, function (err) {
-      if err throw err;
-      else console.log('saving cloze card');
-        });
+        if (err){
+          console.log(err);
+        } 
+        else {
+          console.log('saved to cloze.json'); 
+        }
+      });  
      }
     else {
-      console.log('failure');
+      console.log('Failure, cloze doesn\'t appear in full text. Card not saved.');
       return null;
     }
   }
@@ -35,8 +39,12 @@ class BasicCard {
     this.front = front;
     this.back = back;
     jsonfile.writeFile('basic.json', this, {flag: 'a'}, function (err) {
-      if err throw err;
-      else console.log('saving basic card');
+        if (err){
+          console.log(err);
+        } 
+        else {
+          console.log('Saved to basic.json');
+        }
         });
   }
 
