@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bensass123/flashcards#readme",
   "dependencies": {
-    "inquirer": "^3.0.1"
+    "inquirer": "^3.0.1",
+    "jsonfile": "^2.4.0"
   }
 }
